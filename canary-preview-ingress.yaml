@@ -16,4 +16,5 @@ spec:
         backend:
           service:
             name: canary-demo-preview
-            port: 80
+            port: 
+              number: 80
