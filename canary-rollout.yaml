@@ -3,7 +3,7 @@ kind: Rollout
 metadata:
   name: canary-demo
 spec:
-  replicas: 5
+  replicas: 6
   revisionHistoryLimit: 1
   selector:
     matchLabels:
@@ -15,8 +15,8 @@ spec:
     spec:
       containers:
         - name: canary-demo
-          image: idanarbel/rollouts-demo:yellow
-         # image: idanarbel/rollouts-demo:red
+          #image: idanarbel/rollouts-demo:yellow
+         image: idanarbel/rollouts-demo:red
 
           imagePullPolicy: Always
           ports:
@@ -33,5 +33,7 @@ spec:
       steps:
         - setWeight: 10
         - pause: {}
-        - setWeight: 70
+        - setWeight: 50
+        - pause: {duration: 25}
+        - setWeight: 80
         - pause: {duration: 25}
