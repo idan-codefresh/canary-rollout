@@ -6,7 +6,7 @@ metadata:
     ingress.kubernetes.io/proxy-body-size: 100M
     ingress.kubernetes.io/app-root: /
 spec:
-  ingressClassName: public-nginx
+  ingressClassName: nginx-public
   rules:
   - host: canary-rollout2.rnd.sandbox.codefresh.io
     http:
