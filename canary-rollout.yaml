@@ -2,6 +2,8 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: canary-demo
+    link.argocd.argoproj.io/external-link: http://codefresh.io
+
 spec:
   replicas: 6
   revisionHistoryLimit: 1
@@ -15,8 +17,8 @@ spec:
     spec:
       containers:
         - name: canary-demo
-          #image: idanarbel/rollouts-demo:yellow
-          image: idanarbel/rollouts-demo:purple
+          image: idanarbel/rollouts-demo:yellow
+          #image: idanarbel/rollouts-demo:purple
           imagePullPolicy: Always
           ports:
             - name: http
