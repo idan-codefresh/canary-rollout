@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: canary-demo
-    link.argocd.argoproj.io/external-link: http://codefresh.io
+  link.argocd.argoproj.io/external-link: http://codefresh.io
 
 spec:
   replicas: 6
