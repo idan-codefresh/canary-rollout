@@ -4,7 +4,6 @@ metadata:
   name: canary-demo
   annotations:
     link.argocd.argoproj.io/external-link: http://codefresh.io
-
 spec:
   replicas: 6
   revisionHistoryLimit: 1
@@ -18,7 +17,7 @@ spec:
     spec:
       containers:
         - name: canary-demo
-          image: idanarbel/rollouts-demo:yellow
+          image: idanarbel/rollouts-demo:red
           #image: idanarbel/rollouts-demo:purple
           imagePullPolicy: Always
           ports:
